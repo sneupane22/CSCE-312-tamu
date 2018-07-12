@@ -1,0 +1,37 @@
+//Guessing number game...
+
+
+class Main {
+	function void main() {
+        var int actualNumber;
+        var int guessedNum;
+        var int maximumAttempt;
+        var int count;
+
+//my actual number im setting for the user to guess
+		let actualNumber = 7;
+// the maximum attempts they get
+		let maximumAttempt = 5;
+		let count = 0;
+        let guessedNum = Keyboard.readInt("Guess a number between 1 and 15 (CAREFUL: you only get 5 attempts): ");
+		let count = count + 1;
+		while(~(guessedNum = actualNumber) & (count < maximumAttempt))
+		{
+            let guessedNum = Keyboard.readInt("You are incorrect: guess again a number between 1 and 15: ");
+			let count = count + 1;
+		}
+		if(~(guessedNum = actualNumber))
+		{
+            do Output.printString("Sorry, you failed to guess the number: You had a maximum:  ");
+			do Output.printInt(maximumAttempt);
+			do Output.printString(" attempts.");
+			do Output.println();
+		}
+		else
+		{
+            do Output.printString("WOW CONGRATS YOU GUESSED THE NUMBER CORRECTLY!");
+			do Output.println();
+		}
+		return;
+	}
+}
